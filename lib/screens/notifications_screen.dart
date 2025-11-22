@@ -207,7 +207,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 color: AppColors.info.withOpacity(0.3),
               ),
             ),
-            child: Row(
+            child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(
@@ -215,7 +215,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   color: AppColors.info,
                   size: 24,
                 ),
-                const SizedBox(width: 12),
+                SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -228,7 +228,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           color: AppColors.info,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
                       Text(
                         'Notifications help you stay on track with your habits. You can customize reminder times in the settings.',
                         style: TextStyle(

@@ -8,6 +8,7 @@ import 'detail_screen.dart';
 import '../favorites_screen.dart';
 import '../api_screen.dart';
 import '../notifications_screen.dart';
+import '../../services/storage_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -61,14 +62,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // Load habits on init
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Load habits
       final habitProvider = Provider.of<HabitProvider>(context, listen: false);
       if (habitProvider.habits.isEmpty) {
         for (var habit in _sampleHabits) {
           habitProvider.addHabit(habit);
         }
       }
+
+      print('\n' + '=' * 50);
+      print('STORAGE PERSISTENCE EVIDENCE');
+      print('=' * 50);
+      StorageService.printAllData();
+      print('=' * 50 + '\n');
     });
   }
 

@@ -46,6 +46,8 @@ class NotificationService {
     required String title,
     required String body,
   }) async {
+    await Future.delayed(const Duration(seconds: 3));
+
     const androidDetails = AndroidNotificationDetails(
       'habit_channel',
       'Habit Reminders',
